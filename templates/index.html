@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Image Generator</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    input[type="submit"] {
+      background-color: blue;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Image Generator</h1>
+  <form action="/" method="post">
+    <label for="prompt">Enter prompt:</label>
+    <input type="text" id="prompt" name="prompt">
+    <br><br>
+    <input type="submit" value="Generate Image">
+  </form>
+  {% if image_url %}
+  <h2>Generated Image:</h2>
+  <img src="{{ image_url }}" alt="Generated Image">
+  {% endif %}
+</body>
+
+</html>
